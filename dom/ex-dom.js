@@ -6,7 +6,7 @@ const countries = [
     { title: "Random title", imgUrl: "https://picsum.photos/300/200?random=5" },
   ];
   
-  function cancel(div_, butt_) {
+  function cancel(div_) {
     return div_.remove()
   }
   
@@ -16,7 +16,9 @@ const countries = [
     const img_ = document.createElement("img");
   
     const butt_ = document.createElement("button");
-    butt_.addEventListener("click", cancel(div_, butt_));
+    butt_.addEventListener("click", function () {
+      cancel(div_)
+    });
     butt_.textContent = "Delete";
   
   
@@ -27,5 +29,5 @@ const countries = [
     div_.appendChild(butt_);
     div_.appendChild(img_);
   
-    return document.body.appendChild(div_);
+    document.body.appendChild(div_);
   }
